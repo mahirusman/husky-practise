@@ -16,13 +16,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install"
+    "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write", 
+    "lint": "eslint . --ext .ts"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm test"
-    }
+      "pre-commit": "npm run prettier-format && npm run lint"    }
   },
+
   
   "eslintConfig": {
     "extends": [
