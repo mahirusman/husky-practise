@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+./githooks_commands/pre-commit
+npx lint-staged
